@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+	<meta name="generator" content="Hugo 0.88.1">
+	<title>Northwind API</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		th:attr="integrity='sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC',crossorigin='anonymous'" />
+	<link href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+	<style>
+		.itemLabel {
+			font-weight: bold;
+			font-size: 1.2em;
+			margin: 0.2em;
+		}
+
+		span.itemValue {
+			font-size: 1.0em;
+			margin: 0.2em;
+		}
+
+		.h-10 {
+			height: 10rem;
+		}
+
+		.gradient-grid {
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: repeat(1, 1fr);
+		}
+
+		.gradient-grid {
+			background: linear-gradient(#C29ADD, lavender, white, lavender, #C29ADD);
+		}
+
+		.jsonData {
+			display: none;
+		}
+	</style>
+	<script>
+		$(document).ready(function () {
+			$('#mainTable').DataTable({
+				searching: false, // Disables search input
+				lengthChange: false // Disables entries option				
+			});
+
+		});				
+	</script>
+</head>
+
+<body class="py-4">
+	<h1>Northwind Data</h1>
+
+	<div class="container w-75" th:each="c: ${CustomerOrders}">
+
+		<div class="gradient-grid">
+			<h4>Employee</h4>
+			<ul>
+				<li>
+					<span class="itemLabel">Name</span>
+					<span class="itemValue">
+						<span th:text="${c.employee.firstName}"></span>
+						<span th:text="${c.employee.lastName}"></span>
+					</span>
+				</li>
+				<li>
+					<span class="itemLabel">Company</span>
+					<span class="itemValue" th:text="${c.employee.company.name}"></span>
+				</li>
+				<li th:if="${!#strings.isEmpty(c.employee.emailAddress)}">
+					<span class="itemLabel">Email&nbsp;Address</span>
+					<span class="itemValue" th:text="${c.employee.emailAddress}">
+					</span>
+				</li>
+				<li th:if="${!#strings.isEmpty(c.employee.jobTitle)}">
+					<span class="itemLabel">Job&nbsp;Title</span>
+					<span class="itemValue">
+						<span th:text="${c.employee.jobTitle}"></span>
+					</span>
+				</li>
+				<li th:if="${c.employee.address1 != null}">
+					<div class="itemLabel">Address</div>
+					<span>
+						<span class="itemValue" th:text="${c.employee.address1}"></span>
+						<span class="itemValue" th:if="c.employee.address2 != null">
+							<span th:text="${c.employee.address2}"></span>
+						</span></span>
+					<span class="itemValue"> <span th:if="c.employee.city != null">
+							<span th:text="${c.employee.city}"></span>
+						</span></span>
+					<span class="itemValue"> <span th:if="c.employee.stateProvince != null">
+							<span th:text="${c.employee.stateProvince}"></span>,
+						</span></span>
+					<span class="itemValue"> <span th:if="c.employee.zipPostalCode != null">
+							<span th:text="${c.employee.zipPostalCode}"></span>
+						</span></span>
+					<span class="itemValue"> <span th:if="c.employee.countryRegion != null">
+							<span th:text="${c.employee.countryRegion}"></span>
+						</span></span>
+
+				</li>
+				<li>
+					<div class="itemLabel">Contact</div>
+					<div th:if="${!#strings.isEmpty(c.employee.businessPhone)}">
+						<span class="itemLabel">Business
+							Phone
+						</span>
+						<span class="itemValue">
+							<span th:text="${c.employee.businessPhone}"></span>
+						</span>
+					</div>
+					<div th:if="${!#strings.isEmpty(c.employee.homePhone)}">
+						<span class="itemLabel">Home
+							Phone</span>
+						<span class="itemValue">
+							<span th:text="${c.employee.homePhone}"></span>
+						</span>
+					</div>
+					<div th:if="${!#strings.isEmpty(c.employee.mobilePhone)}">
+						<span class="itemLabel">Mobile
+							Phone</span>
+						<span class="itemValue">
+							<span th:text="${c.employee.mobilePhone}"></span>
+						</span>
+					</div>
+					<div th:if="${!#strings.isEmpty(c.employee.faxNumber)}">
+						<span class="itemLabel">Fax
+							Number</span>
+						<span class="itemValue">
+							<span th:text="${c.employee.faxNumber}"></span>
+						</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="gradient-grid">
+			<h4>Customer</h4>
+			<ul>
+				<li>
+					<span class="itemLabel">Name</span>
+					<span class="itemValue">
+						<span th:text="${c.customer.firstName}"></span>
+						<span th:text="${c.customer.lastName}"></span>
+					</span>
+				</li>
+				<li>
+					<span class="itemLabel">Company</span>
+					<span class="itemValue" th:text="${c.customer.company.name}"></span>
+				</li>
+				<li th:if="${!#strings.isEmpty(c.customer.emailAddress)}">
+					<span class="itemLabel">Email
+						Address</span>
+					<span class="itemValue" th:if="c.customer.emailAddress != null">
+						<span th:text="${c.customer.emailAddress}"></span>
+					</span>
+				</li>
+				<li th:if="${!#strings.isEmpty(c.customer.jobTitle)}">
+					<span class="itemLabel">Job Title</span>
+					<span class="itemValue">
+						<span th:text="${c.customer.jobTitle}"></span>
+					</span>
+				</li>
+				<li th:if="${c.customer.address1 != null}">
+					<span class="itemLabel">Address</span>
+					<span>
+						<span class="itemValue"><span th:text="${c.customer.address1}"></span></span>
+						<span class="itemValue"><span th:if="c.customer.address2 != null">
+								<span th:text="${c.customer.address2}"></span>
+							</span></span>
+						<span class="itemValue"> <span th:if="c.customer.city != null">
+								<span th:text="${c.customer.city}"></span>,
+							</span></span>
+						<span class="itemValue"> <span th:if="c.customer.stateProvince != null">
+								<span th:text="${c.customer.stateProvince}"></span>
+							</span></span>
+						<span class="itemValue"> <span th:if="c.customer.zipPostalCode != null">
+								<span th:text="${c.customer.zipPostalCode}"></span>
+							</span></span>
+						<span class="itemValue"> <span th:if="c.customer.countryRegion != null">
+								<span th:text="${c.customer.countryRegion}"></span>
+							</span></span>
+					</span>
+				</li>
+				<li>
+					<div class="itemLabel">Contact</div>
+					<div th:if="${!#strings.isEmpty(c.customer.businessPhone)}">
+						<span class="itemLabel">Business
+							Phone
+						</span>
+						<span class="itemValue">
+							<span th:text="${c.customer.businessPhone}"></span>
+						</span>
+					</div>
+					<div th:if="${!#strings.isEmpty(c.customer.homePhone)}">
+						<span class="itemLabel">Home
+							Phone</span>
+						<span class="itemValue">
+							<span th:text="${c.customer.homePhone}"></span>
+						</span>
+					</div>
+					<div th:if="${!#strings.isEmpty(c.customer.mobilePhone)}">
+						<span class="itemLabel">Mobile
+							Phone</span>
+						<span class="itemValue">
+							<span th:text="${c.customer.mobilePhone}"></span>
+						</span>
+					</div>
+					<div th:if="${!#strings.isEmpty(c.customer.faxNumber)}">
+						<span class="itemLabel">Fax
+							Number</span>
+						<span class="itemValue">
+							<span th:text="${c.employee.faxNumber}"></span>
+						</span>
+					</div>
+
+				</li>
+			</ul>
+		</div>
+		<div class="gradient-grid">
+			<h4>Dates</h4>
+			<ul>
+				<li th:if="${!#strings.isEmpty(c.orderDate)}">
+					<span class="itemLabel">Order Date</span>
+					<span class="itemValue">
+						<span th:text="${c.orderDate}"></span>
+					</span>
+				</li>
+				<li th:if="${!#strings.isEmpty(c.paidDate)}">
+					<span class="itemLabel">Paid Date</span>
+					<span class="itemValue">
+						<span th:text="${c.paidDate}"></span>
+					</span>
+				</li>
+				<li th:if="${!#strings.isEmpty(c.shippedDate)}">
+					<span class="itemLabel">Shipped Date</span>
+					<span class="itemValue">
+						<span th:text="${c.shippedDate}"></span>
+					</span>
+				</li>
+			</ul>
+		</div>
+		<div class="gradient-grid">
+			<h4>Financial</h4>
+			<ul>
+				<li th:if="${!#strings.isEmpty(c.taxes)}">
+					<span class="itemLabel">Taxes</span>
+					<span class="itemValue">
+						<span th:text="${c.taxes}"></span>
+					</span>
+				</li>
+				<li th:if="${!#strings.isEmpty(c.taxRate)}">
+					<span class="itemLabel">Tax Rate</span>
+					<span class="itemValue">
+						<span th:text="${c.taxRate}"></span>
+					</span>
+				</li>
+				<li th:if="${!#strings.isEmpty(c.paymentType)}">
+					<span class="itemLabel">Payment Type</span>
+					<span class="itemValue">
+						<span th:text="${c.paymentType}"></span>
+					</span>
+				</li>
+			</ul>
+		</div>
+		<div class="gradient-grid">
+			<h4>Status</h4>
+			<ul>
+				<li th:if="${!#strings.isEmpty(c.orderStatus)}">
+					<span class="itemLabel">Order Status</span>
+					<span class="itemValue">
+						<span th:text="${c.orderStatus}"></span>
+					</span>
+				</li>
+				<li th:if="${!#strings.isEmpty(c.orderTaxStatus)}">
+					<span class="itemLabel">Order Tax Status</span>
+					<span class="itemValue">
+						<span th:text="${c.orderTaxStatus}"></span>
+					</span>
+				</li>
+
+			</ul>
+		</div>
+
+
+	</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"
+	th:attr="integrity='sha512-2rNj2KJ+D8s1ceNasTIex6z4HWyOnEYLVC3FigGOmyQCZc2eBXKgOxQmo3oKLHyfcj53uz4QMsRCWNbLd32Q1g==',crossorigin='anonymous'"
+	referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	th:attr="integrity='sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM',crossorigin='anonymous'"></script>
+
+</html>
