@@ -1,0 +1,39 @@
+{
+  "_links" : {
+    "findByQuantityBetweenOrderByQuantityDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByQuantityBetweenOrderByQuantityDesc{?quantity1,quantity2,page,size,sort}",
+      "templated" : true
+    },
+    "findByDiscountBetweenOrderByDiscountDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByDiscountBetweenOrderByDiscountDesc{?discount1,discount2,page,size,sort}",
+      "templated" : true
+    },
+    "findByQuantityBetweenOrderByQuantityAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByQuantityBetweenOrderByQuantityAsc{?quantity1,quantity2,page,size,sort}",
+      "templated" : true
+    },
+    "findByUnitPriceBetweenOrderByUnitPriceAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByUnitPriceBetweenOrderByUnitPriceAsc{?unitPrice1,unitPrice2,page,size,sort}",
+      "templated" : true
+    },
+    "findByDateAllocatedBetweenOrderByDateAllocatedAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByDateAllocatedBetweenOrderByDateAllocatedAsc{?dateAllocated1,dateAllocated2,page,size,sort}",
+      "templated" : true
+    },
+    "findByUnitPriceBetweenOrderByUnitPriceDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByUnitPriceBetweenOrderByUnitPriceDesc{?unitPrice1,unitPrice2,page,size,sort}",
+      "templated" : true
+    },
+    "findByDateAllocatedBetweenOrderByDateAllocatedDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByDateAllocatedBetweenOrderByDateAllocatedDesc{?dateAllocated1,dateAllocated2,page,size,sort}",
+      "templated" : true
+    },
+    "findByDiscountBetweenOrderByDiscountAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByDiscountBetweenOrderByDiscountAsc{?discount1,discount2,page,size,sort}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search"
+    }
+  }
+}

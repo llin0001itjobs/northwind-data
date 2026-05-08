@@ -1,0 +1,25 @@
+Keystore password is too short - must be at least 6 characters
+Enter keystore password:
+Owner: CN=Linus Lin, OU=Northwind Data, O=Northwind, L=Delray Beach, ST=FL, C=US
+Issuer: CN=Linus Lin, OU=Northwind Data, O=Northwind, L=Delray Beach, ST=FL, C=US
+Serial number: ed065fea62dd701
+Valid from: Mon Dec 19 14:13:36 EST 2022 until: Thu Dec 16 14:13:36 EST 2032
+Certificate fingerprints:
+         SHA1: 5D:EA:B1:03:B8:3B:CF:24:19:81:6A:69:DD:C1:D4:C1:58:62:81:41
+         SHA256: DA:0E:DD:D6:F9:80:79:1B:C7:3A:7D:70:95:21:C0:B7:96:8C:04:CB:E2:D9:EA:F4:61:8E:AB:04:7C:05:50:AB
+Signature algorithm name: SHA384withRSA
+Subject Public Key Algorithm: 4096-bit RSA key
+Version: 3
+
+Extensions:
+
+#1: ObjectId: 2.5.29.14 Criticality=false
+SubjectKeyIdentifier [
+KeyIdentifier [
+0000: BF 59 CF FE 98 16 CC E0   F3 20 F8 E3 67 A1 A1 DC  .Y....... ..g...
+0010: BE F8 D3 73                                        ...s
+]
+]
+
+Trust this certificate? [no]:  yes
+Certificate was added to keystore

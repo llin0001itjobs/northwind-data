@@ -1,0 +1,28 @@
+ip a
+
+mysql -h northwind-01-mysql.mysql.database.azure.com -u minad06@northwind-01-mysql.mysql.database.azure.com -p --ssl-mode=REQUIRED
+SET PASSWORD FOR 'minad06'@'northwind-01-mysql.mysql.database.azure.com' = PASSWORD('Creeper01')
+
+
+sudo nano /etc/mysql/mysql.conf.d/mysql.cnf
+
+##change bind-address
+
+bind-address=0.0.0.0
+#skip-networking
+#skip-bind-address
+
+
+
+
+sudo apt update
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.33-1_all.deb
+sudo dpkg -i mysql-apt-config_0.8.33-1_all.deb
+sudo apt update
+sudo apt install mysql-server
+sudo mysql_secure_installation
+sudo systemctl status mysql
+sudo systemctl start mysql
+mysql -u root -p
+
+

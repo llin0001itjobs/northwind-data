@@ -1,0 +1,23 @@
+{
+  "_links" : {
+    "findAllByOrderByLastNameDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/supplier/search/findAllByOrderByLastNameDesc{?page,size,sort}",
+      "templated" : true
+    },
+    "findAllByOrderByLastNameAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/supplier/search/findAllByOrderByLastNameAsc{?page,size,sort}",
+      "templated" : true
+    },
+    "findByJobTitleOrderByLastNameAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/supplier/search/findByJobTitleOrderByLastNameAsc{?jobTitle,page,size,sort}",
+      "templated" : true
+    },
+    "findByJobTitleOrderByLastNameDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/supplier/search/findByJobTitleOrderByLastNameDesc{?jobTitle,page,size,sort}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "http://localhost:8080/northwind-data/api/supplier/search"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "_links" : {
+    "findByQuantityLessThanEqualOrderByQuantityDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByQuantityLessThanEqualOrderByQuantityDesc{?quantity,page,size,sort}",
+      "templated" : true
+    },
+    "findByQuantityOrderByQuantityAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByQuantityOrderByQuantityAsc{?quantity,page,size,sort}",
+      "templated" : true
+    },
+    "findByQuantityGreaterThanEqualOrderByQuantityAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByQuantityGreaterThanEqualOrderByQuantityAsc{?quantity,page,size,sort}",
+      "templated" : true
+    },
+    "findByQuantityOrderByQuantityDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByQuantityOrderByQuantityDesc{?quantity,page,size,sort}",
+      "templated" : true
+    },
+    "findByUnitCostGreaterThanEqualOrderByQuantityAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByUnitCostGreaterThanEqualOrderByQuantityAsc{?unitCost,page,size,sort}",
+      "templated" : true
+    },
+    "findByUnitCostOrderByUnitCostDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByUnitCostOrderByUnitCostDesc{?unitCost,page,size,sort}",
+      "templated" : true
+    },
+    "findByUnitCostOrderByUnitCostAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByUnitCostOrderByUnitCostAsc{?unitCost,page,size,sort}",
+      "templated" : true
+    },
+    "findByQuantityGreaterThanEqualOrderByQuantityDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByQuantityGreaterThanEqualOrderByQuantityDesc{?quantity,page,size,sort}",
+      "templated" : true
+    },
+    "findByUnitCostLessThanEqualOrderByQuantityDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByUnitCostLessThanEqualOrderByQuantityDesc{?unitCost,page,size,sort}",
+      "templated" : true
+    },
+    "findByUnitCostGreaterThanEqualOrderByQuantityDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByUnitCostGreaterThanEqualOrderByQuantityDesc{?unitCost,page,size,sort}",
+      "templated" : true
+    },
+    "findByQuantityLessThanEqualOrderByQuantityAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByQuantityLessThanEqualOrderByQuantityAsc{?quantity,page,size,sort}",
+      "templated" : true
+    },
+    "findByUnitCostLessThanEqualOrderByQuantityAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search/findByUnitCostLessThanEqualOrderByQuantityAsc{?unitCost,page,size,sort}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail/search"
+    }
+  }
+}

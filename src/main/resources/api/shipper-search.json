@@ -1,0 +1,15 @@
+{
+  "_links" : {
+    "findAllByOrderByStateProvinceAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/shipper/search/findAllByOrderByStateProvinceAsc{?page,size,sort}",
+      "templated" : true
+    },
+    "findAllByOrderByStateProvinceDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/shipper/search/findAllByOrderByStateProvinceDesc{?page,size,sort}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "http://localhost:8080/northwind-data/api/shipper/search"
+    }
+  }
+}

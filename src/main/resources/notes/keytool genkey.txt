@@ -1,0 +1,60 @@
+Microsoft Windows [Version 10.0.19045.2251]
+(c) Microsoft Corporation. All rights reserved.
+
+keytool -genkey -alias northwind-01 -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore northwind-01.p12 -validity 3650
+Enter keystore password:
+Re-enter new password:
+They don't match. Try again
+Enter keystore password:O4OaVqm98
+Re-enter new password:O4OaVqm98
+What is your first and last name?
+  [Unknown]:  Linus Lin
+What is the name of your organizational unit?
+  [Unknown]:  Northwind
+What is the name of your organization?
+  [Unknown]:  Northwind Central
+What is the name of your City or Locality?
+  [Unknown]:  Delray Beach
+What is the name of your State or Province?
+  [Unknown]:  Florida
+What is the two-letter country code for this unit?
+  [Unknown]:  US
+Is CN=Linus Lin, OU=Northwind, O=Northwind Central, L=Delray Beach, ST=Florida, C=US correct?
+  [no]:  yes
+
+Generating 2,048 bit RSA key pair and self-signed certificate (SHA256withRSA) with a validity of 3,650 days
+        for: CN=Linus Lin, OU=Northwind, O=Northwind Central, L=Delray Beach, ST=Florida, C=US
+
+D:\java\jdk-17.0.4\bin>
+
+
+
+
+keytool -genkeypair -alias northwind-01 -keyalg RSA -keysize 4096 -storetype JKS -keystore northwind-01.jks -validity 3650 -storepass O4OaVqm98
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using 
+keytool -importkeystore -srckeystore northwind-01.jks -destkeystore northwind-01.jks -deststoretype pkcs12
+
+
+keytool -genkeypair -alias northwind-01 -keyalg RSA -keysize 4096 -storetype PKCS12 -keystore northwind-01.p12 -validity 3650 -storepass O4OaVqm98
+
+keytool -export -keystore northwind-01.p12 -alias northwind-01 -file northwind-01.crt
+
+We'll be asked to input the JRE keystore password. If you have never changed it, it should be the default one: changeit or changeme, depending on the
+keytool -importcert -file northwind-01.crt -alias northwind-01 -keystore D:/java/jdk-17.0.4/lib/security/cacerts
+keytool -importcert -file northwind-01.crt -alias northwind-01 -keystore "C:/Program Files/Java/jdk-17.0.4/lib/security/cacerts"
+--from https://stackoverflow.com/questions/16891182/keytool-error-keystore-was-tampered-with-or-password-was-incorrect
+--I solved it by using the default password for cacerts keystore : 'changeit' 
+
+ 
+
+openssl rsa -in northwind-01.pem -pubout -out northwind-01-pub.pem 
+
+keytool -genkeypair -alias northwind-01 -keyalg RSA -keysize 2048 -keystore northwind-01.jks -validity 365 -storetype JKS
+keytool -certreq -alias northwind-01 -keystore northwind-01.jks -file northwind-01-pub.pem
+
+openssl req -x509 -new -nodes -keyout northwind-01.key -out northwind-01.crt -days 365 -config <(openssl req -text -noout -in northwind-01-pub.pem)
+openssl req -x509 -new -nodes -keyout northwind-01.key -out northwind-01.crt -days 365 -config northwind-01-pub.pem
+
+openssl req -in northwind-01-pub.pem -noout -text

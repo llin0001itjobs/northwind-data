@@ -1,0 +1,99 @@
+{
+  "_links" : {
+    "purchaseOrderDetails" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderDetail{?page,size,sort}",
+      "templated" : true
+    },
+    "products" : {
+      "href" : "http://localhost:8080/northwind-data/api/product{?page,size,sort}",
+      "templated" : true
+    },
+    "authentications" : {
+      "href" : "http://localhost:8080/northwind-data/api/authentication{?page,size,sort}",
+      "templated" : true
+    },
+    "roles" : {
+      "href" : "http://localhost:8080/northwind-data/api/role{?page,size,sort}",
+      "templated" : true
+    },
+    "customers" : {
+      "href" : "http://localhost:8080/northwind-data/api/customer{?page,size,sort}",
+      "templated" : true
+    },
+    "orderTaxStatuses" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderTaxStatus{?page,size,sort}",
+      "templated" : true
+    },
+    "typeStates" : {
+      "href" : "http://localhost:8080/northwind-data/api/typeState{?page,size,sort}",
+      "templated" : true
+    },
+    "productSuppliers" : {
+      "href" : "http://localhost:8080/northwind-data/api/productSupplier{?page,size,sort}",
+      "templated" : true
+    },
+    "paymentTypes" : {
+      "href" : "http://localhost:8080/northwind-data/api/paymentType{?page,size,sort}",
+      "templated" : true
+    },
+    "purchaseOrders" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrder{?page,size,sort}",
+      "templated" : true
+    },
+    "suppliers" : {
+      "href" : "http://localhost:8080/northwind-data/api/supplier{?page,size,sort}",
+      "templated" : true
+    },
+    "inventoryTransactions" : {
+      "href" : "http://localhost:8080/northwind-data/api/inventoryTransaction{?page,size,sort}",
+      "templated" : true
+    },
+    "orderStatuses" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderStatus{?page,size,sort}",
+      "templated" : true
+    },
+    "purchaseOrderStatuses" : {
+      "href" : "http://localhost:8080/northwind-data/api/purchaseOrderStatus{?page,size,sort}",
+      "templated" : true
+    },
+    "inventoryTransactionTypes" : {
+      "href" : "http://localhost:8080/northwind-data/api/inventoryTransactionType{?page,size,sort}",
+      "templated" : true
+    },
+    "privileges" : {
+      "href" : "http://localhost:8080/northwind-data/api/privilege{?page,size,sort}",
+      "templated" : true
+    },
+    "orderDetails" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail{?page,size,sort}",
+      "templated" : true
+    },
+    "companies" : {
+      "href" : "http://localhost:8080/northwind-data/api/company{?page,size,sort}",
+      "templated" : true
+    },
+    "invoices" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice{?page,size,sort}",
+      "templated" : true
+    },
+    "shippers" : {
+      "href" : "http://localhost:8080/northwind-data/api/shipper{?page,size,sort}",
+      "templated" : true
+    },
+    "orderDetailStatuses" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetailStatus{?page,size,sort}",
+      "templated" : true
+    },
+    "customerOrders" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder{?page,size,sort}",
+      "templated" : true
+    },
+    "employees" : {
+      "href" : "http://localhost:8080/northwind-data/api/employee{?page,size,sort}",
+      "templated" : true
+    },
+    "profile" : {
+      "href" : "http://localhost:8080/northwind-data/api/profile"
+    }
+  }
+}
