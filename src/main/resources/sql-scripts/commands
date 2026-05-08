@@ -1,0 +1,4 @@
+mysql -h llin0001-northwind-01.mysql.database.azure.com -u minad01 -p -e 'SHOW FULL PROCESSLIST'
+
+
+SHOW TRIGGERS IN northwind\G;
