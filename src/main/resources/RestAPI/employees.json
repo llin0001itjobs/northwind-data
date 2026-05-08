@@ -1,0 +1,31 @@
+{
+    "_links": {
+        "findByStateProvinceOrderByLastNameDesc": {
+            "href": "http://localhost:8080/northwind-data/api/employees/search/findByStateProvinceOrderByLastNameDesc{?stateProvince,page,size,sort}",
+            "templated": true
+        },
+        "findByStateProvinceOrderByLastNameAsc": {
+            "href": "http://localhost:8080/northwind-data/api/employees/search/findByStateProvinceOrderByLastNameAsc{?stateProvince,page,size,sort}",
+            "templated": true
+        },
+        "findByZipPostalCodeOrderByLastNameAsc": {
+            "href": "http://localhost:8080/northwind-data/api/employees/search/findByZipPostalCodeOrderByLastNameAsc{?zipPostalCode,page,size,sort}",
+            "templated": true
+        },
+        "findByLastNameOrderByFirstNameAsc": {
+            "href": "http://localhost:8080/northwind-data/api/employees/search/findByLastNameOrderByFirstNameAsc{?lastName,page,size,sort}",
+            "templated": true
+        },
+        "findByLastNameOrderByFirstNameDesc": {
+            "href": "http://localhost:8080/northwind-data/api/employees/search/findByLastNameOrderByFirstNameDesc{?lastName,page,size,sort}",
+            "templated": true
+        },
+        "findByZipPostalCodeOrderByLastNameDesc": {
+            "href": "http://localhost:8080/northwind-data/api/employees/search/findByZipPostalCodeOrderByLastNameDesc{?zipPostalCode,page,size,sort}",
+            "templated": true
+        },
+        "self": {
+            "href": "http://localhost:8080/northwind-data/api/employees/search"
+        }
+    }
+}

@@ -1,0 +1,47 @@
+{
+	"_links": {
+		"findByDueDateBetweenOrderByDueDateAsc": {
+			"href": "http://localhost:8080/northwind-data/api/invoices/search/findByDueDateBetweenOrderByDueDateAsc{?dueDate1,dueDate2,page,size,sort}",
+			"templated": true
+		},
+		"findByDueDateBetweenOrderByDueDateDesc": {
+			"href": "http://localhost:8080/northwind-data/api/invoices/search/findByDueDateBetweenOrderByDueDateDesc{?dueDate1,dueDate2,page,size,sort}",
+			"templated": true
+		},
+		"findByInvoiceDateBetweenOrderByInvoiceDateAsc": {
+			"href": "http://localhost:8080/northwind-data/api/invoices/search/findByInvoiceDateBetweenOrderByInvoiceDateAsc{?invoiceDate1,invoiceDate2,page,size,sort}",
+			"templated": true
+		},
+		"findByInvoiceDateBetweenOrderByInvoiceDateDesc": {
+			"href": "http://localhost:8080/northwind-data/api/invoices/search/findByInvoiceDateBetweenOrderByInvoiceDateDesc{?invoiceDate1,invoiceDate2,page,size,sort}",
+			"templated": true
+		},
+		"findByAmountDueBetweenOrderByAmountDueAsc": {
+			"href": "http://localhost:8080/northwind-data/api/invoices/search/findByAmountDueBetweenOrderByAmountDueAsc{?amountDue1,amountDue2,page,size,sort}",
+			"templated": true
+		},
+		"findByAmountDueBetweenOrderByAmountDueDesc": {
+			"href": "http://localhost:8080/northwind-data/api/invoices/search/findByAmountDueBetweenOrderByAmountDueDesc{?amountDue1,amountDue2,page,size,sort}",
+			"templated": true
+		},
+		"findByShippingBetweenOrderByShippingAsc": {
+			"href": "http://localhost:8080/northwind-data/api/invoices/search/findByShippingBetweenOrderByShippingAsc{?Shipping1,Shipping2,page,size,sort}",
+			"templated": true
+		},
+		"findByShippingBetweenOrderByShippingDesc": {
+			"href": "http://localhost:8080/northwind-data/api/invoices/search/findByShippingBetweenOrderByShippingDesc{?Shipping1,Shipping2,page,size,sort}",
+			"templated": true
+		},
+		"findByTaxBetweenOrderByTaxAsc": {
+			"href": "http://localhost:8080/northwind-data/api/invoices/search/findByTaxBetweenOrderByTaxAsc{?tax1,tax2,page,size,sort}",
+			"templated": true
+		},
+		"findByTaxBetweenOrderByTaxDesc": {
+			"href": "http://localhost:8080/northwind-data/api/invoices/search/findByTaxBetweenOrderByTaxDesc{?tax1,tax2,page,size,sort}",
+			"templated": true
+		},
+		"self": {
+			"href": "http://localhost:8080/northwind-data/api/invoices/search"
+		}
+	}
+}

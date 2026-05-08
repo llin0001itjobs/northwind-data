@@ -1,0 +1,63 @@
+{
+    "_links": {
+        "findByOrderDateBetweenOrderByOrderDateAsc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByOrderDateBetweenOrderByOrderDateAsc{?orderDate1,orderDate2,page,size,sort}",
+            "templated": true
+        },        
+        "findByOrderDateBetweenOrderByOrderDateDesc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByOrderDateBetweenOrderByOrderDateDesc{?orderDate1,orderDate2,page,size,sort}",
+            "templated": true
+        },    
+        "findByPaidDateBetweenOrderByPaidDateAsc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByPaidDateBetweenOrderByPaidDateAsc{?paidDate1,paidDate2,page,size,sort}",
+            "templated": true
+        },
+        "findByPaidDateBetweenOrderByPaidDateDesc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByPaidDateBetweenOrderByPaidDateDesc{?paidDate1,paidDate2,page,size,sort}",
+            "templated": true
+        },         
+        "findByShippedDateBetweenOrderByShippedDateAsc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByShippedDateBetweenOrderByShippedDateAsc{?shippedDate1,shippedDate2,page,size,sort}",
+            "templated": true
+        },    
+        "findByShippedDateBetweenOrderByShippedDateDesc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByShippedDateBetweenOrderByShippedDateDesc{?shippedDate1,shippedDate2,page,size,sort}",
+            "templated": true
+        },
+       "findByShippingFeeBetweenOrderByShippingFeeAsc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByShippingFeeBetweenOrderByShippingFeeAsc{?shippingFee1,shippingFee2,page,size,sort}",
+            "templated": true
+        },       
+        "findByShippingFeeBetweenOrderByShippingFeeDesc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByShippingFeeBetweenOrderByShippingFeeDesc{?shippingFee1,shippingFee2,page,size,sort}",
+            "templated": true
+        },
+        "findByTaxesBetweenOrderByTaxesAsc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByTaxesBetweenOrderByTaxesAsc{?taxes1,taxes2,page,size,sort}",
+            "templated": true
+        },        
+        "findByTaxesBetweenOrderByTaxesDesc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByTaxesBetweenOrderByTaxesDesc{?taxes1,taxes2,page,size,sort}",
+            "templated": true
+        },
+        "findByShipStateProvinceOrderByShipStateProvinceAsc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByShipStateProvinceOrderByShipStateProvinceAsc{?shipStateProvince,page,size,sort}",
+            "templated": true
+        },
+       "findByShipStateProvinceOrderByShipStateProvinceDesc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByShipStateProvinceOrderByShipStateProvinceDesc{?shipStateProvince,page,size,sort}",
+            "templated": true
+        },        
+        "findByShipZipPostalCodeOrderByShipZipPostalCodeAsc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByShipZipPostalCodeOrderByShipZipPostalCodeAsc{?shipZipPostalCode,page,size,sort}",
+            "templated": true
+        },
+        "findByShipZipPostalCodeOrderByShipZipPostalCodeDesc": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search/findByShipZipPostalCodeOrderByShipZipPostalCodeDesc{?shipZipPostalCode,page,size,sort}",
+            "templated": true
+        },        
+        "self": {
+            "href": "http://localhost:8080/northwind-data/api/orders/search"
+        }
+    }
+}

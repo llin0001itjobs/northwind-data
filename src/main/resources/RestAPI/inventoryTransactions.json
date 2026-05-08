@@ -1,0 +1,39 @@
+{
+	"_links": {
+		"findByTransactionCreatedDateBetweenOrderByTransactionCreatedDateAsc": {
+			"href": "http://localhost:8080/northwind-data/api/inventoryTransactions/search/findByTransactionCreatedDateBetweenOrderByTransactionCreatedDateAsc{?transactionCreatedDate1,transactionCreatedDate2,page,size,sort}",
+			"templated": true
+		},
+		"findByTransactionCreatedDateBetweenOrderByTransactionCreatedDateDesc": {
+			"href": "http://localhost:8080/northwind-data/api/inventoryTransactions/search/findByTransactionCreatedDateBetweenOrderByTransactionCreatedDateDesc{?transactionCreatedDate1,transactionCreatedDate2,page,size,sort}",
+			"templated": true
+		},
+		"findByTransactionModifiedDateBetweenOrderByTransactionModifiedDateDesc": {
+			"href": "http://localhost:8080/northwind-data/api/inventoryTransactions/search/findByTransactionModifiedDateBetweenOrderByTransactionModifiedDateDesc{?transactionModifiedDate1,transactionModifiedDate2,page,size,sort}",
+			"templated": true
+		},
+		"findByTransactionModifiedDateBetweenOrderByTransactionModifiedDateAsc": {
+			"href": "http://localhost:8080/northwind-data/api/inventoryTransactions/search/findByTransactionModifiedDateBetweenOrderByTransactionModifiedDateAsc{?transactionModifiedDate1,transactionModifiedDate2,page,size,sort}",
+			"templated": true
+		},
+		"findByQuantityBetweenOrderByQuantityAsc": {
+			"href": "http://localhost:8080/northwind-data/api/inventoryTransactions/search/findByQuantityBetweenOrderByQuantityAsc{?quantity1,quantity2,page,size,sort}",
+			"templated": true
+		},
+		"findByQuantityBetweenOrderByQuantityDesc": {
+			"href": "http://localhost:8080/northwind-data/api/inventoryTransactions/search/findByQuantityBetweenOrderByQuantityDesc{?quantity1,quantity2,page,size,sort}",
+			"templated": true
+		},
+		"findByCommentsOrderByCommentsDesc": {
+			"href": "http://localhost:8080/northwind-data/api/inventoryTransactions/search/findByCommentsOrderByCommentsDesc{?comments,page,size,sort}",
+			"templated": true
+		},
+		"findByCommentsOrderByCommentsAsc": {
+			"href": "http://localhost:8080/northwind-data/api/inventoryTransactions/search/findByCommentsOrderByCommentsAsc{?comments,page,size,sort}",
+			"templated": true
+		},
+		"self": {
+			"href": "http://localhost:8080/northwind-data/api/inventoryTransactions/search"
+		}
+	}
+}

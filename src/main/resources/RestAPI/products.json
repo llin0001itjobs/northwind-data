@@ -1,0 +1,55 @@
+{
+	"_links": {
+		"findByCategoryOrderByProductNameAsc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByCategoryOrderByProductNameAsc{?Category,page,size,sort}",
+			"templated": true
+		},
+		"findByCategoryOrderByProductNameDesc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByCategoryOrderByProductNameDesc{?Category,page,size,sort}",
+			"templated": true
+		},
+		"findByListPriceBetweenOrderByListPriceAsc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByListPriceBetweenOrderByListPriceAsc{?listPrice1,listPrice2,page,size,sort}",
+			"templated": true
+		},
+		"findByListPriceBetweenOrderByListPriceDesc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByListPriceBetweenOrderByListPriceDesc{?listPrice1,listPrice2,page,size,sort}",
+			"templated": true
+		},
+		"findByStandardCostBetweenOrderByStandardCostAsc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByStandardCostBetweenOrderByStandardCostAsc{?standardCost1,standardCost2,page,size,sort}",
+			"templated": true
+		},
+		"findByStandardCostBetweenOrderByStandardCostDesc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByStandardCostBetweenOrderByStandardCostDesc{?standardCost1,standardCost2,page,size,sort}",
+			"templated": true
+		},
+		"findByMinimumReorderQuantityBetweenOrderByMinimumReorderQuantityAsc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByMinimumReorderQuantityBetweenOrderByMinimumReorderQuantityAsc{?minimumReorderQuantity1,minimumReorderQuantity2,page,size,sort}",
+			"templated": true
+		},
+		"findByMinimumReorderQuantityBetweenOrderByMinimumReorderQuantityDesc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByMinimumReorderQuantityBetweenOrderByMinimumReorderQuantityDesc{?minimumReorderQuantity1,minimumReorderQuantity2,page,size,sort}",
+			"templated": true
+		},
+		"findByReorderLevelBetweenOrderByReorderLevelDesc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByReorderLevelBetweenOrderByReorderLevelDesc{?reorderLevel1,reorderLevel2,page,size,sort}",
+			"templated": true
+		},
+		"findByReorderLevelBetweenOrderByReorderLevelAsc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByReorderLevelBetweenOrderByReorderLevelAsc{?reorderLevel1,reorderLevel2,page,size,sort}",
+			"templated": true
+		},
+		"findByTargetLevelBetweenOrderByTargetLevelAsc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByTargetLevelBetweenOrderByTargetLevelAsc{?targetLevel1,targetLevel2,page,size,sort}",
+			"templated": true
+		},
+		"findByTargetLevelBetweenOrderByTargetLevelDesc": {
+			"href": "http://localhost:8080/northwind-data/api/products/search/findByTargetLevelBetweenOrderByTargetLevelDesc{?targetLevel1,targetLevel2,page,size,sort}",
+			"templated": true
+		},
+		"self": {
+			"href": "http://localhost:8080/northwind-data/api/products/search"
+		}
+	}
+}
