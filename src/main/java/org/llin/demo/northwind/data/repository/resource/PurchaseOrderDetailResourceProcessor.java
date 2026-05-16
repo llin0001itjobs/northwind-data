@@ -18,7 +18,7 @@ public class PurchaseOrderDetailResourceProcessor
 	@Override
 	public EntityModel<PurchaseOrderDetail> process(EntityModel<PurchaseOrderDetail> model) {
 		PurchaseOrderDetail purchaseOrderDetail = model.getContent();
-		String apiURLContext = propertyDefaultConfig.getServer().getContextPath()
+		String apiURLContext = propertyDefaultConfig.getServer().getServlet().getContextPath()
 				+ propertyDefaultConfig.getSpring().getData().getRest().getBasePath();
 		
 		if (purchaseOrderDetail != null) {

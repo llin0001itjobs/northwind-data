@@ -1,54 +1,55 @@
 package org.llin.demo.northwind.data.entity;
 
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = _EntityNames.USER)
-public class User  {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+@Table(name = "`user`") 
+public class User {
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
-	@JoinTable(name = _EntityNames.ROLE_USER, 
-		inverseJoinColumns = {@JoinColumn(name = "role_id") }, 
-		       joinColumns = {@JoinColumn(name = "user_id") })
-	private List<Role> roles;
-	
-	private String username;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-	private String password;
+    @NotBlank
+    @Size(min = 3, max = 32)
+    private String username;
 
-	private String email;
-	
-	private Boolean enabled;
-	
+    @NotBlank
+    @Email
+    private String email;
+
+    private String password;        
+
+    private boolean enabled = false;
+    private boolean emailVerified = false;
+    private String verificationToken;
+
+    @Transient
+    private String newPassword;
+
+    @Transient
+    private String confirmPassword;
+
+	@ManyToOne
+	@JoinColumn(name = "role_id", nullable = false)
+	private Role role;
+
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public List<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
 	}
 
 	public String getUsername() {
@@ -59,14 +60,6 @@ public class User  {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -75,18 +68,71 @@ public class User  {
 		this.email = email;
 	}
 
-	public Boolean isEnabled() {
+
+	public String getNewPassword() {
+		return newPassword;
+	}
+
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
+	}
+
+	// make sure these exist
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public boolean isEnabled() {
 		return enabled;
 	}
-	
-	public void setEnabled(Boolean enabled) {
+
+	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
-		
+
+	public boolean isEmailVerified() {
+		return emailVerified;
+	}
+
+	public void setEmailVerified(boolean emailVerified) {
+		this.emailVerified = emailVerified;
+	}
+
+	public String getVerificationToken() {
+		return verificationToken;
+	}
+
+	public void setVerificationToken(String verificationToken) {
+		this.verificationToken = verificationToken;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", roles=" + roles + ", username=" + username + ", password=" + password + ", email="
-				+ email + ", enabled=" + enabled + "]";
+		return "User [id=" + id + ", username=" + username + ", email=" + email + ", password=" + password
+				+ ", enabled=" + enabled + ", emailVerified=" + emailVerified + ", verificationToken="
+				+ verificationToken + ", newPassword=" + newPassword + ", confirmPassword=" + confirmPassword
+				+ ", role=" + role + "]";
 	}
+
 	
 }

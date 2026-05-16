@@ -18,7 +18,7 @@ public class ShipperResourceProcessor implements RepresentationModelProcessor<En
     public EntityModel<Shipper> process(EntityModel<Shipper> model) {
         Shipper shipper = model.getContent();
         
-		String apiURLContext = propertyDefaultConfig.getServer().getContextPath()
+		String apiURLContext = propertyDefaultConfig.getServer().getServlet().getContextPath()
 				+ propertyDefaultConfig.getSpring().getData().getRest().getBasePath();
 		
         if (shipper != null) {

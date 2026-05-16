@@ -12,7 +12,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface OrderDetailRepository extends JpaRepository<OrderDetail, Integer> {
     List<OrderDetail> findByCustomerOrderId(Integer customerOrderId);
     List<OrderDetail> findByProductId(Integer productId);
-    List<OrderDetail> findByStatusId(Integer statusId);
+    List<OrderDetail> findByOrderStatusId(Integer statusId);
     List<OrderDetail> findByPurchaseOrderId(Integer purchaseOrderId);
     List<OrderDetail> findByInventoryTransactionId(Integer inventoryTransactionId);
 

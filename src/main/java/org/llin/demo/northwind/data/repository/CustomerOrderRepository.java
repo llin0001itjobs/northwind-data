@@ -57,9 +57,10 @@ public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, In
     List<CustomerOrder> findByCustomerId(Integer customerId);
     List<CustomerOrder> findByEmployeeId(Integer employeeId);
     List<CustomerOrder> findByShipperId(Integer shipperId);
-    List<CustomerOrder> findByStatusId(Integer statusId);
-    List<CustomerOrder> findByTaxStatusId(Integer taxStatusId);
-    List<CustomerOrder> findByPaymentTypeId(Integer paymentTypeId);
+    
+    
+    List<CustomerOrder> findByOrderStatusId(Integer orderStatusId);   
+    List<CustomerOrder> findByOrderTaxStatusId(Integer orderTaxStatusId);
 
     // String fields (exact + partial search)
     List<CustomerOrder> findByShipName(String shipName);
@@ -99,14 +100,14 @@ public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, In
             Double minRate, Double maxRate);
 
     // === Combined (AND) examples – very powerful ===
-    List<CustomerOrder> findByCustomerIdAndStatusId(Integer customerId, Integer statusId);
-    List<CustomerOrder> findByOrderDateBetweenAndStatusIdOrderByOrderDateAsc(
+    List<CustomerOrder> findByCustomerIdAndOrderStatusId(Integer customerId, Integer statusId);
+    List<CustomerOrder> findByOrderDateBetweenAndOrderStatusIdOrderByOrderDateAsc(
             LocalDateTime startDate, LocalDateTime endDate, Integer statusId);
 
     List<CustomerOrder> findByCustomerIdAndShipCityContaining(
             Integer customerId, String shipCity);
 
-    List<CustomerOrder> findByStatusIdAndPaidDateIsNull(Integer statusId); // pending payment
+    List<CustomerOrder> findByOrderStatusIdAndPaidDateIsNull(Integer statusId); // pending payment
 
     // Optional: sort by most recent orders
     List<CustomerOrder> findByCustomerIdOrderByOrderDateDesc(Integer customerId);

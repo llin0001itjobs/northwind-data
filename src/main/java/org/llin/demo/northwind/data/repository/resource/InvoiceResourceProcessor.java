@@ -17,7 +17,7 @@ public class InvoiceResourceProcessor implements RepresentationModelProcessor<En
     @Override
     public EntityModel<Invoice> process(EntityModel<Invoice> model) {
         Invoice invoice = model.getContent();
-		String apiURLContext = propertyDefaultConfig.getServer().getContextPath()
+		String apiURLContext = propertyDefaultConfig.getServer().getServlet().getContextPath()
 				+ propertyDefaultConfig.getSpring().getData().getRest().getBasePath();
 		
         if (invoice != null) {

@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
-@ActiveProfiles("dev")
+@ActiveProfiles("test")
 @EnableConfigurationProperties(PropertyDefaultProperties.class)
 public class TestDefaultProperties {
 
@@ -20,7 +20,7 @@ public class TestDefaultProperties {
 	@Test
 	public void testDefaultPropertyValues() {
 		assertNotNull(propertyDefaultConfig.getInfo().getDescription());
-		assertNotNull(propertyDefaultConfig.getServer().getContextPath());
+		assertNotNull(propertyDefaultConfig.getServer().getServlet().getContextPath());
 		assertNotNull(propertyDefaultConfig.getSpring().getJackson().getDateFormat());
 		assertNotNull(propertyDefaultConfig.getSpring().getData().getJpa().getEntityPackagesToScan());
 		assertNotNull(propertyDefaultConfig.getSpring().getData().getJpa().getRepositoryPackages());

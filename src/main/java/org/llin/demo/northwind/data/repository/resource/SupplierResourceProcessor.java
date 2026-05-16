@@ -17,7 +17,7 @@ public class SupplierResourceProcessor implements RepresentationModelProcessor<E
     @Override
     public EntityModel<Supplier> process(EntityModel<Supplier> model) {
         Supplier supplier = model.getContent();
-		String apiURLContext = propertyDefaultConfig.getServer().getContextPath()
+		String apiURLContext = propertyDefaultConfig.getServer().getServlet().getContextPath()
 				+ propertyDefaultConfig.getSpring().getData().getRest().getBasePath();
 		
         if (supplier != null) {

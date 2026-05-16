@@ -18,7 +18,7 @@ public class PurchaseOrderResourceProcessor implements RepresentationModelProces
     public EntityModel<PurchaseOrder> process(EntityModel<PurchaseOrder> model) {
         PurchaseOrder purchaseOrder = model.getContent();
         
-		String apiURLContext = propertyDefaultConfig.getServer().getContextPath()
+		String apiURLContext = propertyDefaultConfig.getServer().getServlet().getContextPath()
 				+ propertyDefaultConfig.getSpring().getData().getRest().getBasePath();
 		
         if (purchaseOrder != null) {

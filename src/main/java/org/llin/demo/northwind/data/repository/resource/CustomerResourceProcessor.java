@@ -17,7 +17,7 @@ public class CustomerResourceProcessor implements RepresentationModelProcessor<E
     @Override
     public EntityModel<Customer> process(EntityModel<Customer> model) {
         Customer customer = model.getContent();
-		String apiURLContext = propertyDefaultConfig.getServer().getContextPath()
+		String apiURLContext = propertyDefaultConfig.getServer().getServlet().getContextPath()
 				+ propertyDefaultConfig.getSpring().getData().getRest().getBasePath();
 		
         if (customer != null) {

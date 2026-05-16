@@ -5,7 +5,7 @@ import org.springframework.validation.annotation.Validated;
 
 import jakarta.validation.constraints.NotNull;
 
-@ConfigurationProperties(prefix = "app")
+@ConfigurationProperties
 @Validated
 public class PropertyDefaultProperties {
 
@@ -25,8 +25,26 @@ public class PropertyDefaultProperties {
 	public static class Server {
 		private String address;
 		private String port;
-		private String contextPath;
+		private Servlet servlet = new Servlet();
+		
+		public static class Servlet {
+			private String contextPath;	
+			
+			public String getContextPath() {
+				return contextPath;
+			}
 
+			public void setContextPath(String contextPath) {
+				this.contextPath = contextPath;
+			}
+
+			@Override
+			public String toString() {
+				return "Servlet [contextPath=" + contextPath + "]";
+			}
+			
+		}
+		
 		public String getAddress() {
 			return address;
 		}
@@ -43,17 +61,17 @@ public class PropertyDefaultProperties {
 			this.port = port;
 		}
 
-		public String getContextPath() {
-			return contextPath;
+		public Servlet getServlet() {
+			return servlet;
 		}
 
-		public void setContextPath(String contextPath) {
-			this.contextPath = contextPath;
+		public void setServlet(Servlet servlet) {
+			this.servlet = servlet;
 		}
 
 		@Override
 		public String toString() {
-			return "Server [address=" + address + ", port=" + port + ", contextPath=" + contextPath + "]";
+			return "Server [address=" + address + ", port=" + port + ", servlet=" + servlet + "]";
 		}
 
 	}

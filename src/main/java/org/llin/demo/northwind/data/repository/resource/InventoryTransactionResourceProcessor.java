@@ -18,7 +18,7 @@ public class InventoryTransactionResourceProcessor
 	@Override
 	public EntityModel<InventoryTransaction> process(EntityModel<InventoryTransaction> model) {
 		InventoryTransaction inventoryTransaction = model.getContent();
-		String apiURLContext = propertyDefaultConfig.getServer().getContextPath()
+		String apiURLContext = propertyDefaultConfig.getServer().getServlet().getContextPath()
 				+ propertyDefaultConfig.getSpring().getData().getRest().getBasePath();
 		
 		if (inventoryTransaction != null) {

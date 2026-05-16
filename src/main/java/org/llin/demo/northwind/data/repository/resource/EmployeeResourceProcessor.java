@@ -17,7 +17,7 @@ public class EmployeeResourceProcessor implements RepresentationModelProcessor<E
     @Override
     public EntityModel<Employee> process(EntityModel<Employee> model) {
     	Employee employee = model.getContent();
-		String apiURLContext = propertyDefaultConfig.getServer().getContextPath()
+		String apiURLContext = propertyDefaultConfig.getServer().getServlet().getContextPath()
 				+ propertyDefaultConfig.getSpring().getData().getRest().getBasePath();
 		
         if (employee != null) {

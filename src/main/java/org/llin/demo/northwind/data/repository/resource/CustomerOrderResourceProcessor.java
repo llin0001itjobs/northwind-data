@@ -18,9 +18,9 @@ public class CustomerOrderResourceProcessor implements RepresentationModelProces
 	public EntityModel<CustomerOrder> process(EntityModel<CustomerOrder> model) {
 		CustomerOrder customerOrder = model.getContent();
 		if (customerOrder != null) {
-			String apiURLContext = propertyDefaultConfig.getServer().getContextPath()
+			String apiURLContext = propertyDefaultConfig.getServer().getServlet().getContextPath()
 					+ propertyDefaultConfig.getSpring().getData().getRest().getBasePath();
-			
+
 			// Assuming you have a method getCompanyId() that returns the company ID
 			Long customerId = (long) customerOrder.getCustomer().getId();
 			model.add(Link.of(apiURLContext + "/customerOrder/"

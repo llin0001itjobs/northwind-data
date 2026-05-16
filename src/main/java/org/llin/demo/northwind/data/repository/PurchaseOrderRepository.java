@@ -12,10 +12,10 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface PurchaseOrderRepository extends JpaRepository<PurchaseOrder, Integer> {
 
     List<PurchaseOrder> findBySupplierId(Integer supplierId);
-    List<PurchaseOrder> findByCreatedBy(Integer employeeId);
-    List<PurchaseOrder> findByApprovedBy(Integer employeeId);
-    List<PurchaseOrder> findBySubmittedBy(Integer employeeId);
-    List<PurchaseOrder> findByStatusId(Integer statusId);
+    List<PurchaseOrder> findByCreatedById(Integer employeeId);
+    List<PurchaseOrder> findByApprovedById(Integer employeeId);
+    List<PurchaseOrder> findBySubmittedById(Integer employeeId);
+    List<PurchaseOrder> findByOrderStatusId(Integer statusId);
 
     // Date ranges (very common for PO reports)
     List<PurchaseOrder> findByCreationDateBetweenOrderByCreationDateAsc(LocalDateTime start, LocalDateTime end);

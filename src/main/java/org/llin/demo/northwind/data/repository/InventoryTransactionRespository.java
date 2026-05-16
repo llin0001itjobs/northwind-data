@@ -10,7 +10,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(path = "inventoryTransaction")
 public interface InventoryTransactionRespository extends JpaRepository<InventoryTransaction, Integer> {
 	
-    List<InventoryTransaction> findByTransactionType(Integer transactionType);
+	List<InventoryTransaction> findByInventoryTransactionTypeId(Integer transactionTypeId);
     List<InventoryTransaction> findByProductId(Integer productId);
     List<InventoryTransaction> findByQuantity(Integer quantity);
     List<InventoryTransaction> findByPurchaseOrderId(Integer purchaseOrderId);

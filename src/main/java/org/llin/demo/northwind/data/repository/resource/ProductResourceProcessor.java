@@ -17,7 +17,7 @@ public class ProductResourceProcessor implements RepresentationModelProcessor<En
 	@Override
 	public EntityModel<Product> process(EntityModel<Product> model) {
 		Product product = model.getContent();
-		String apiURLContext = propertyDefaultConfig.getServer().getContextPath()
+		String apiURLContext = propertyDefaultConfig.getServer().getServlet().getContextPath()
 				+ propertyDefaultConfig.getSpring().getData().getRest().getBasePath();
 		
 		if (product != null) {

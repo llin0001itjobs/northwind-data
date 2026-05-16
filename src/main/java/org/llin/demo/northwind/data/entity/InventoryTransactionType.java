@@ -1,6 +1,5 @@
 package org.llin.demo.northwind.data.entity;
-import org.springframework.beans.factory.annotation.Value;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,7 +14,7 @@ public class InventoryTransactionType {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
-	@Value(value = "type_name")
+    @Column(name = "type_name")
 	private String typeName;
 
 	public InventoryTransactionType() {
