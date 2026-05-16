@@ -23,7 +23,7 @@ public interface _EntityNames {
 	String SHIPPER = "shipper";
 	String SUPPLIER = "supplier";
 	String ROLE = "role";
-	String ROLE_USER_DETAIL = "role_user_detail";
+	String ROLE_USER = "role_user";
 	String TYPE_STATE = "type_state";
-	String USER_DETAIL = "user_detail";
+	String USER = "user";
 }

@@ -1,12 +1,11 @@
 package org.llin.demo.northwind.data.repository;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.llin.demo.northwind.data.entity.Product;
 import org.llin.demo.northwind.data.repository.model.LabelValueLong;
 import org.llin.demo.northwind.data.repository.model.LabelValueLongValueDouble;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -74,35 +73,21 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
 			""", nativeQuery = true)
 	List<LabelValueLong> priceRangePerStandardCost();
 
-	Page<Product> findByCategoryOrderByProductNameAsc(String Category, Pageable pageable);
+    List<Product> findByProductCode(String productCode);
+    List<Product> findByProductNameContaining(String productName);   // most useful
+    List<Product> findByCategoryContaining(String category);
+    List<Product> findByDescriptionContaining(String description);
 
-	Page<Product> findByCategoryOrderByProductNameDesc(String Category, Pageable pageable);
+    List<Product> findByDiscontinued(Boolean discontinued);
 
-	Page<Product> findByListPriceBetweenOrderByListPriceAsc(Double listPrice1, Double listPrice2, Pageable pageable);
+    // Price / level ranges
+    List<Product> findByStandardCostBetweenOrderByStandardCostAsc(BigDecimal min, BigDecimal max);
+    List<Product> findByListPriceBetweenOrderByListPriceAsc(BigDecimal min, BigDecimal max);
+    List<Product> findByReorderLevelBetweenOrderByReorderLevelAsc(Integer min, Integer max);
+    List<Product> findByTargetLevelBetweenOrderByTargetLevelAsc(Integer min, Integer max);
+    List<Product> findByMinimumReorderQuantityBetweenOrderByMinimumReorderQuantityAsc(Integer min, Integer max);
 
-	Page<Product> findByListPriceBetweenOrderByListPriceDesc(Double listPrice1, Double listPrice2, Pageable pageable);
+    // Combined examples
+    List<Product> findByCategoryAndDiscontinued(String category, Boolean discontinued);
 
-	Page<Product> findByStandardCostBetweenOrderByStandardCostAsc(Double standardCost1, Double standardCost2,
-			Pageable pageable);
-
-	Page<Product> findByStandardCostBetweenOrderByStandardCostDesc(Double standardCost1, Double standardCost2,
-			Pageable pageable);
-
-	Page<Product> findByMinimumReorderQuantityBetweenOrderByMinimumReorderQuantityAsc(Integer minimumReorderQuantity1,
-			Integer minimumReorderQuantity2, Pageable pageable);
-
-	Page<Product> findByMinimumReorderQuantityBetweenOrderByMinimumReorderQuantityDesc(Integer minimumReorderQuantity1,
-			Integer minimumReorderQuantity2, Pageable pageable);
-
-	Page<Product> findByReorderLevelBetweenOrderByReorderLevelAsc(Integer reorderLevel1, Integer reorderLevel2,
-			Pageable pageable);
-
-	Page<Product> findByReorderLevelBetweenOrderByReorderLevelDesc(Integer reorderLevel1, Integer reorderLevel2,
-			Pageable pageable);
-
-	Page<Product> findByTargetLevelBetweenOrderByTargetLevelAsc(Integer targetLevel1, Integer targetLevel2,
-			Pageable pageable);
-
-	Page<Product> findByTargetLevelBetweenOrderByTargetLevelDesc(Integer targetLevel1, Integer targetLevel2,
-			Pageable pageable);
 }

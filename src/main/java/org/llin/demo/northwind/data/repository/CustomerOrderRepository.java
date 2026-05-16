@@ -1,5 +1,7 @@
 package org.llin.demo.northwind.data.repository;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.llin.demo.northwind.data.entity.CustomerOrder;
@@ -51,6 +53,63 @@ public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, In
 	@RequestMapping("/shippingFeePerMonth")  	
 	List<LabelIntValueDouble> shippingFeePerMonth();
 	
+    // === Most useful single-field filters ===
+    List<CustomerOrder> findByCustomerId(Integer customerId);
+    List<CustomerOrder> findByEmployeeId(Integer employeeId);
+    List<CustomerOrder> findByShipperId(Integer shipperId);
+    List<CustomerOrder> findByStatusId(Integer statusId);
+    List<CustomerOrder> findByTaxStatusId(Integer taxStatusId);
+    List<CustomerOrder> findByPaymentTypeId(Integer paymentTypeId);
+
+    // String fields (exact + partial search)
+    List<CustomerOrder> findByShipName(String shipName);
+    List<CustomerOrder> findByShipNameContaining(String shipName);
+    List<CustomerOrder> findByShipCity(String shipCity);
+    List<CustomerOrder> findByShipCityContaining(String shipCity);
+    List<CustomerOrder> findByShipStateProvince(String shipStateProvince);
+    List<CustomerOrder> findByShipStateProvinceContaining(String shipStateProvince);
+    List<CustomerOrder> findByShipCountryRegion(String shipCountryRegion);
+    List<CustomerOrder> findByShipCountryRegionContaining(String shipCountryRegion);
+    List<CustomerOrder> findByNotesContaining(String notes);
+    List<CustomerOrder> findByPaymentType(String paymentType);
+
+    // === Date range filters (very common for orders) ===
+    List<CustomerOrder> findByOrderDateBetweenOrderByOrderDateAsc(
+            LocalDateTime startDate, LocalDateTime endDate);
+
+    List<CustomerOrder> findByShippedDateBetweenOrderByShippedDateAsc(
+            LocalDateTime startDate, LocalDateTime endDate);
+
+    List<CustomerOrder> findByPaidDateBetweenOrderByPaidDateAsc(
+            LocalDateTime startDate, LocalDateTime endDate);
+
+    // Single-date helpers
+    List<CustomerOrder> findByOrderDateAfterOrderByOrderDateAsc(LocalDateTime date);
+    List<CustomerOrder> findByShippedDateIsNull();           // not yet shipped
+    List<CustomerOrder> findByPaidDateIsNull();              // not yet paid
+
+    // === Money / numeric ranges ===
+    List<CustomerOrder> findByShippingFeeBetweenOrderByShippingFeeAsc(
+            BigDecimal minFee, BigDecimal maxFee);
+
+    List<CustomerOrder> findByTaxesBetweenOrderByTaxesAsc(
+            BigDecimal minTax, BigDecimal maxTax);
+
+    List<CustomerOrder> findByTaxRateBetweenOrderByTaxRateAsc(
+            Double minRate, Double maxRate);
+
+    // === Combined (AND) examples – very powerful ===
+    List<CustomerOrder> findByCustomerIdAndStatusId(Integer customerId, Integer statusId);
+    List<CustomerOrder> findByOrderDateBetweenAndStatusIdOrderByOrderDateAsc(
+            LocalDateTime startDate, LocalDateTime endDate, Integer statusId);
+
+    List<CustomerOrder> findByCustomerIdAndShipCityContaining(
+            Integer customerId, String shipCity);
+
+    List<CustomerOrder> findByStatusIdAndPaidDateIsNull(Integer statusId); // pending payment
+
+    // Optional: sort by most recent orders
+    List<CustomerOrder> findByCustomerIdOrderByOrderDateDesc(Integer customerId);
 
 	
 }

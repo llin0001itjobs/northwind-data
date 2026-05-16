@@ -1,12 +1,12 @@
 package org.llin.demo.northwind.data.repository;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.llin.demo.northwind.data.entity.PurchaseOrderDetail;
 import org.llin.demo.northwind.data.repository.model.LabelDoubleValueLong;
 import org.llin.demo.northwind.data.repository.model.LabelValueLong;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -52,22 +52,13 @@ public interface PurchaseOrderDetailRepository extends JpaRepository<PurchaseOrd
             """, nativeQuery = true)  
 	List<LabelDoubleValueLong> quantityPerUnitCost();
 			
-	Page<PurchaseOrderDetail> findByQuantityOrderByQuantityAsc(double quantity, Pageable pageable);
-	Page<PurchaseOrderDetail> findByQuantityOrderByQuantityDesc(double quantity, Pageable pageable);
-	
-	Page<PurchaseOrderDetail> findByQuantityGreaterThanEqualOrderByQuantityAsc(double quantity, Pageable pageable);
-	Page<PurchaseOrderDetail> findByQuantityGreaterThanEqualOrderByQuantityDesc(double quantity, Pageable pageable);
-	
-	Page<PurchaseOrderDetail> findByQuantityLessThanEqualOrderByQuantityAsc(double quantity, Pageable pageable);
-	Page<PurchaseOrderDetail> findByQuantityLessThanEqualOrderByQuantityDesc(double quantity, Pageable pageable);	
-	
-	Page<PurchaseOrderDetail> findByUnitCostOrderByUnitCostAsc(double unitCost, Pageable pageable);
-	Page<PurchaseOrderDetail> findByUnitCostOrderByUnitCostDesc(double unitCost, Pageable pageable);
+    List<PurchaseOrderDetail> findByPurchaseOrderId(Integer purchaseOrderId);
+    List<PurchaseOrderDetail> findByProductId(Integer productId);
+    List<PurchaseOrderDetail> findByInventoryTransactionId(Integer inventoryTransactionId);
 
-	Page<PurchaseOrderDetail> findByUnitCostGreaterThanEqualOrderByQuantityAsc(double unitCost, Pageable pageable);
-	Page<PurchaseOrderDetail> findByUnitCostGreaterThanEqualOrderByQuantityDesc(double unitCost, Pageable pageable);
-	
-	Page<PurchaseOrderDetail> findByUnitCostLessThanEqualOrderByQuantityAsc(double unitCost, Pageable pageable);
-	Page<PurchaseOrderDetail> findByUnitCostLessThanEqualOrderByQuantityDesc(double unitCost, Pageable pageable);	
-		
+    List<PurchaseOrderDetail> findByQuantityBetweenOrderByQuantityAsc(BigDecimal min, BigDecimal max);
+    List<PurchaseOrderDetail> findByUnitCostBetweenOrderByUnitCostAsc(BigDecimal min, BigDecimal max);
+
+    List<PurchaseOrderDetail> findByDateReceivedBetweenOrderByDateReceivedAsc(LocalDateTime start, LocalDateTime end);
+    List<PurchaseOrderDetail> findByPostedToInventory(Boolean postedToInventory);
 }

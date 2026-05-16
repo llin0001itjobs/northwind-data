@@ -1,36 +1,47 @@
 package org.llin.demo.northwind.data.repository;
 
-import java.time.LocalDateTime;
-
 import org.llin.demo.northwind.data.entity.Invoice;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
+
 @RepositoryRestResource(path = "invoice")
 public interface InvoiceRepository extends JpaRepository<Invoice, Integer> {
-	
-	Page<Invoice> findByDueDateBetweenOrderByDueDateAsc(LocalDateTime dueDate1, LocalDateTime dueDate2, Pageable pageable);
 
-	Page<Invoice> findByDueDateBetweenOrderByDueDateDesc(LocalDateTime dueDate1, LocalDateTime dueDate2, Pageable pageable);
+    // === Your original range queries (cleaned up) ===
+    List<Invoice> findByDueDateBetweenOrderByDueDateAsc(LocalDateTime dueDate1, LocalDateTime dueDate2);
 
-	Page<Invoice> findByInvoiceDateBetweenOrderByInvoiceDateAsc(LocalDateTime invoiceDate1, LocalDateTime invoiceDate2,
-			Pageable pageable);
+    List<Invoice> findByInvoiceDateBetweenOrderByInvoiceDateAsc(LocalDateTime invoiceDate1, LocalDateTime invoiceDate2);
 
-	Page<Invoice> findByInvoiceDateBetweenOrderByInvoiceDateDesc(LocalDateTime invoiceDate1, LocalDateTime invoiceDate2,
-			Pageable pageable);
+    List<Invoice> findByAmountDueBetweenOrderByAmountDueAsc(BigDecimal amountDue1, BigDecimal amountDue2);
 
-	Page<Invoice> findByAmountDueBetweenOrderByAmountDueAsc(Double amountDue1, Double amountDue2, Pageable pageable);
+    List<Invoice> findByShippingBetweenOrderByShippingAsc(BigDecimal shipping1, BigDecimal shipping2);
 
-	Page<Invoice> findByAmountDueBetweenOrderByAmountDueDesc(Double amountDue1, Double amountDue2, Pageable pageable);
+    List<Invoice> findByTaxBetweenOrderByTaxAsc(BigDecimal tax1, BigDecimal tax2);
 
-	Page<Invoice> findByShippingBetweenOrderByShippingAsc(Double Shipping1, Double Shipping2, Pageable pageable);
+    // === Very useful additional filters ===
 
-	Page<Invoice> findByShippingBetweenOrderByShippingDesc(Double Shipping1, Double Shipping2, Pageable pageable);
+    // By linked order (most important for invoices!)
+    List<Invoice> findByCustomerOrderId(Integer customerOrderId);
 
-	Page<Invoice> findByTaxBetweenOrderByTaxAsc(Double tax1, Double tax2, Pageable pageable);
+    // Single-date helpers
+    List<Invoice> findByInvoiceDateAfterOrderByInvoiceDateAsc(LocalDateTime date);
+    List<Invoice> findByDueDateBeforeOrderByDueDateAsc(LocalDateTime date);
 
-	Page<Invoice> findByTaxBetweenOrderByTaxDesc(Double tax1, Double tax2, Pageable pageable);
+    // Overdue invoices (very common need)
+    List<Invoice> findByDueDateBeforeAndAmountDueGreaterThanOrderByDueDateAsc(
+            LocalDateTime date, BigDecimal amountDue);
 
+    // Combined date + amount (great for reporting)
+    List<Invoice> findByInvoiceDateBetweenAndAmountDueGreaterThanOrderByInvoiceDateAsc(
+            LocalDateTime startDate, LocalDateTime endDate, BigDecimal minAmount);
+
+    // Search by amount due greater/less than
+    List<Invoice> findByAmountDueGreaterThanOrderByAmountDueDesc(BigDecimal amount);
+    List<Invoice> findByAmountDueLessThanOrderByAmountDueAsc(BigDecimal amount);
+
+    // Optional: ignore case or partial matches if you add string fields later
 }
