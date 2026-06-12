@@ -1,28 +1,29 @@
 package org.llin.demo.northwind.data;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.hamcrest.Matchers.containsString;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.web.servlet.MockMvc;
 
-@SpringBootTest(classes = {
-		Application.class }, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest
+@AutoConfigureMockMvc // This allows us to inject MockMvc
 @ActiveProfiles("test")
 class TestServiceIntegrationTest {
 
-	@Autowired
-	private TestRestTemplate restTemplate;
+    @Autowired
+    private MockMvc mockMvc;
 
-	@Test
-	void testEntityManagerConnection() {
-		String response = restTemplate.getForObject("/api/test", String.class);
-		System.out.println("Response: " + response);
-		assertNotNull(response);
-		assertTrue(response.contains("EntityManager")); // optional check
-	}
-
+    @Test
+    void testEntityManagerConnection() throws Exception {
+        mockMvc.perform(get("/api/test"))
+               .andExpect(status().isOk()) // Check if status is 200
+               .andExpect(content().string(containsString("EntityManager"))); // Check content
+    }
 }
