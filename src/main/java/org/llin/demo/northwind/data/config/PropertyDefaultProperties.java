@@ -5,7 +5,7 @@ import org.springframework.validation.annotation.Validated;
 
 import jakarta.validation.constraints.NotNull;
 
-@ConfigurationProperties(prefix = "northwind")   // ← Recommended prefix
+@ConfigurationProperties
 @Validated
 public class PropertyDefaultProperties {
 
