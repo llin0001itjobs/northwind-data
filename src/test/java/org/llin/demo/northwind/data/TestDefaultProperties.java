@@ -1,7 +1,5 @@
 package org.llin.demo.northwind.data;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.jupiter.api.Test;
 import org.llin.demo.northwind.data.config.PropertyDefaultProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

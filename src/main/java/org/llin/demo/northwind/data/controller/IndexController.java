@@ -7,7 +7,7 @@ import org.springframework.web.servlet.view.RedirectView;
 @Controller
 public class IndexController {
 
-    @GetMapping("/")
+	@GetMapping({"", "/"})
     public RedirectView redirect() {
         return new RedirectView("home/entities"); 
     }

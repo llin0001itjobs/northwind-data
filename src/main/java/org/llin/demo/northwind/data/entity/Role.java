@@ -11,16 +11,16 @@ public class Role implements _Entity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;	
-	private String name;
+	private String type;
 	private String description;
 
 	public Role() {
 		super();
 	}
 
-	public Role(String name, String description) {
+	public Role(String type, String description) {
 		super();
-		this.name = name;
+		this.type = type;
 		this.description = description;
 	}
 
@@ -34,12 +34,12 @@ public class Role implements _Entity {
 		this.id = id;
 	}
 	
-	public String getName() {
-		return name;
+	public String getType() {
+		return type;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getDescription() {
@@ -52,7 +52,7 @@ public class Role implements _Entity {
 
 	@Override
 	public String toString() {
-		return "Role [name=" + name + ", description=" + description + "]";
+		return "Role [type=" + type + ", description=" + description + "]";
 	}
 
 
