@@ -54,13 +54,11 @@ public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, In
 	List<LabelIntValueDouble> shippingFeePerMonth();
 	
     // === Most useful single-field filters ===
-    List<CustomerOrder> findByCustomerId(Integer customerId);
-    List<CustomerOrder> findByEmployeeId(Integer employeeId);
-    List<CustomerOrder> findByShipperId(Integer shipperId);
-    
-    
-    List<CustomerOrder> findByOrderStatusId(Integer orderStatusId);   
-    List<CustomerOrder> findByOrderTaxStatusId(Integer orderTaxStatusId);
+    CustomerOrder findByCustomerId(Integer customerId);
+    CustomerOrder findByEmployeeId(Integer employeeId);
+    CustomerOrder findByShipperId(Integer shipperId);       
+    CustomerOrder findByOrderStatusId(Integer orderStatusId);   
+    CustomerOrder findByOrderTaxStatusId(Integer orderTaxStatusId);
 
     // String fields (exact + partial search)
     List<CustomerOrder> findByShipName(String shipName);
@@ -97,7 +95,7 @@ public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, In
             BigDecimal minTax, BigDecimal maxTax);
 
     List<CustomerOrder> findByTaxRateBetweenOrderByTaxRateAsc(
-            Double minRate, Double maxRate);
+    		BigDecimal minRate, BigDecimal maxRate);
 
     // === Combined (AND) examples – very powerful ===
     List<CustomerOrder> findByCustomerIdAndOrderStatusId(Integer customerId, Integer statusId);

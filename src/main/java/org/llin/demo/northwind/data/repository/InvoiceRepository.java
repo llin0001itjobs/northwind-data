@@ -43,5 +43,4 @@ public interface InvoiceRepository extends JpaRepository<Invoice, Integer> {
     List<Invoice> findByAmountDueGreaterThanOrderByAmountDueDesc(BigDecimal amount);
     List<Invoice> findByAmountDueLessThanOrderByAmountDueAsc(BigDecimal amount);
 
-    // Optional: ignore case or partial matches if you add string fields later
 }

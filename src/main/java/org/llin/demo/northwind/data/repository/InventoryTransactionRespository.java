@@ -11,12 +11,12 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 public interface InventoryTransactionRespository extends JpaRepository<InventoryTransaction, Integer> {
 	
 	List<InventoryTransaction> findByInventoryTransactionTypeId(Integer transactionTypeId);
-    List<InventoryTransaction> findByProductId(Integer productId);
-    List<InventoryTransaction> findByQuantity(Integer quantity);
+    List<InventoryTransaction> findByProductId(Integer productId);    
     List<InventoryTransaction> findByPurchaseOrderId(Integer purchaseOrderId);
     List<InventoryTransaction> findByCustomerOrderId(Integer customerOrderId);
     List<InventoryTransaction> findByCommentsContaining(String comments);
 
+    
     // Date ranges
     List<InventoryTransaction> findByTransactionCreatedDateBetweenOrderByTransactionCreatedDateAsc(
             LocalDateTime start, LocalDateTime end);
