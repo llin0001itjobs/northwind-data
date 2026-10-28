@@ -1,0 +1,127 @@
+{
+  "_links" : {
+    "feeRangePerCount" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/feeRangePerCount"
+    },
+    "shippingFeePerMonth" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/shippingFeePerMonth"
+    },
+    "findByPaidDateIsNull" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByPaidDateIsNull"
+    },
+    "findByOrderDateAfterOrderByOrderDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByOrderDateAfterOrderByOrderDateAsc{?date}",
+      "templated" : true
+    },
+    "findByPaymentType" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByPaymentType{?paymentType}",
+      "templated" : true
+    },
+    "findByShipCity" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShipCity{?shipCity}",
+      "templated" : true
+    },
+    "findByShipStateProvince" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShipStateProvince{?shipStateProvince}",
+      "templated" : true
+    },
+    "findByShippedDateIsNull" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShippedDateIsNull"
+    },
+    "findByShippingFeeBetweenOrderByShippingFeeAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShippingFeeBetweenOrderByShippingFeeAsc{?minFee,maxFee}",
+      "templated" : true
+    },
+    "findByTaxRateBetweenOrderByTaxRateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByTaxRateBetweenOrderByTaxRateAsc{?minRate,maxRate}",
+      "templated" : true
+    },
+    "findByOrderStatusIdAndPaidDateIsNull" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByOrderStatusIdAndPaidDateIsNull{?statusId}",
+      "templated" : true
+    },
+    "findByPaidDateBetweenOrderByPaidDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByPaidDateBetweenOrderByPaidDateAsc{?startDate,endDate}",
+      "templated" : true
+    },
+    "findByOrderTaxStatusId" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByOrderTaxStatusId{?orderTaxStatusId}",
+      "templated" : true
+    },
+    "findByCustomerId" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByCustomerId{?customerId}",
+      "templated" : true
+    },
+    "findByShipperId" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShipperId{?shipperId}",
+      "templated" : true
+    },
+    "findByOrderStatusId" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByOrderStatusId{?orderStatusId}",
+      "templated" : true
+    },
+    "findByShipStateProvinceContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShipStateProvinceContaining{?shipStateProvince}",
+      "templated" : true
+    },
+    "findByOrderDateBetweenAndOrderStatusIdOrderByOrderDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByOrderDateBetweenAndOrderStatusIdOrderByOrderDateAsc{?startDate,endDate,statusId}",
+      "templated" : true
+    },
+    "findByShipNameContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShipNameContaining{?shipName}",
+      "templated" : true
+    },
+    "findByEmployeeId" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByEmployeeId{?employeeId}",
+      "templated" : true
+    },
+    "findByShippedDateBetweenOrderByShippedDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShippedDateBetweenOrderByShippedDateAsc{?startDate,endDate}",
+      "templated" : true
+    },
+    "findByCustomerIdAndOrderStatusId" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByCustomerIdAndOrderStatusId{?customerId,statusId}",
+      "templated" : true
+    },
+    "findByShipCountryRegion" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShipCountryRegion{?shipCountryRegion}",
+      "templated" : true
+    },
+    "findByNotesContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByNotesContaining{?notes}",
+      "templated" : true
+    },
+    "findByCustomerIdAndShipCityContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByCustomerIdAndShipCityContaining{?customerId,shipCity}",
+      "templated" : true
+    },
+    "findByCustomerIdOrderByOrderDateDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByCustomerIdOrderByOrderDateDesc{?customerId}",
+      "templated" : true
+    },
+    "findByOrderDateBetweenOrderByOrderDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByOrderDateBetweenOrderByOrderDateAsc{?startDate,endDate}",
+      "templated" : true
+    },
+    "findByShipCountryRegionContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShipCountryRegionContaining{?shipCountryRegion}",
+      "templated" : true
+    },
+    "findByShipName" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShipName{?shipName}",
+      "templated" : true
+    },
+    "findByShipCityContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByShipCityContaining{?shipCity}",
+      "templated" : true
+    },
+    "findByTaxesBetweenOrderByTaxesAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search/findByTaxesBetweenOrderByTaxesAsc{?minTax,maxTax}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "http://localhost:8080/northwind-data/api/customerOrder/search"
+    }
+  }
+}

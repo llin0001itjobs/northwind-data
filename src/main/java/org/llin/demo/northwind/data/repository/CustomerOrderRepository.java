@@ -54,12 +54,13 @@ public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, In
 	List<LabelIntValueDouble> shippingFeePerMonth();
 	
     // === Most useful single-field filters ===
-    CustomerOrder findByCustomerId(Integer customerId);
-    CustomerOrder findByEmployeeId(Integer employeeId);
-    CustomerOrder findByShipperId(Integer shipperId);       
-    CustomerOrder findByOrderStatusId(Integer orderStatusId);   
-    CustomerOrder findByOrderTaxStatusId(Integer orderTaxStatusId);
-
+	List<CustomerOrder> findByCustomerId(Integer customerId);
+    List<CustomerOrder> findByEmployeeId(Integer employeeId);
+    List<CustomerOrder> findByShipperId(Integer shipperId);       
+    List<CustomerOrder> findByOrderStatusId(Integer orderStatusId);   
+    List<CustomerOrder> findByOrderTaxStatusId(Integer orderTaxStatusId);
+    List<CustomerOrder> findByPaymentTypeId(Integer paymentTypeId);
+    
     // String fields (exact + partial search)
     List<CustomerOrder> findByShipName(String shipName);
     List<CustomerOrder> findByShipNameContaining(String shipName);
@@ -70,8 +71,7 @@ public interface CustomerOrderRepository extends JpaRepository<CustomerOrder, In
     List<CustomerOrder> findByShipCountryRegion(String shipCountryRegion);
     List<CustomerOrder> findByShipCountryRegionContaining(String shipCountryRegion);
     List<CustomerOrder> findByNotesContaining(String notes);
-    List<CustomerOrder> findByPaymentType(String paymentType);
-
+    
     // === Date range filters (very common for orders) ===
     List<CustomerOrder> findByOrderDateBetweenOrderByOrderDateAsc(
             LocalDateTime startDate, LocalDateTime endDate);

@@ -1,0 +1,55 @@
+{
+  "_links" : {
+    "findByShippingBetweenOrderByShippingAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByShippingBetweenOrderByShippingAsc{?shipping1,shipping2}",
+      "templated" : true
+    },
+    "findByAmountDueLessThanOrderByAmountDueAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByAmountDueLessThanOrderByAmountDueAsc{?amount}",
+      "templated" : true
+    },
+    "findByCustomerOrderId" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByCustomerOrderId{?customerOrderId}",
+      "templated" : true
+    },
+    "findByInvoiceDateBetweenAndAmountDueGreaterThanOrderByInvoiceDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByInvoiceDateBetweenAndAmountDueGreaterThanOrderByInvoiceDateAsc{?startDate,endDate,minAmount}",
+      "templated" : true
+    },
+    "findByInvoiceDateBetweenOrderByInvoiceDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByInvoiceDateBetweenOrderByInvoiceDateAsc{?invoiceDate1,invoiceDate2}",
+      "templated" : true
+    },
+    "findByTaxBetweenOrderByTaxAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByTaxBetweenOrderByTaxAsc{?tax1,tax2}",
+      "templated" : true
+    },
+    "findByInvoiceDateAfterOrderByInvoiceDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByInvoiceDateAfterOrderByInvoiceDateAsc{?date}",
+      "templated" : true
+    },
+    "findByDueDateBetweenOrderByDueDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByDueDateBetweenOrderByDueDateAsc{?dueDate1,dueDate2}",
+      "templated" : true
+    },
+    "findByAmountDueGreaterThanOrderByAmountDueDesc" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByAmountDueGreaterThanOrderByAmountDueDesc{?amount}",
+      "templated" : true
+    },
+    "findByDueDateBeforeAndAmountDueGreaterThanOrderByDueDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByDueDateBeforeAndAmountDueGreaterThanOrderByDueDateAsc{?date,amountDue}",
+      "templated" : true
+    },
+    "findByDueDateBeforeOrderByDueDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByDueDateBeforeOrderByDueDateAsc{?date}",
+      "templated" : true
+    },
+    "findByAmountDueBetweenOrderByAmountDueAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search/findByAmountDueBetweenOrderByAmountDueAsc{?amountDue1,amountDue2}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "http://localhost:8080/northwind-data/api/invoice/search"
+    }
+  }
+}

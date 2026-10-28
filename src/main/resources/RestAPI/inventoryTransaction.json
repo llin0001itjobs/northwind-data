@@ -1,0 +1,39 @@
+{
+  "_links" : {
+    "findByProductId" : {
+      "href" : "http://localhost:8080/northwind-data/api/inventoryTransaction/search/findByProductId{?productId}",
+      "templated" : true
+    },
+    "findByCustomerOrderId" : {
+      "href" : "http://localhost:8080/northwind-data/api/inventoryTransaction/search/findByCustomerOrderId{?customerOrderId}",
+      "templated" : true
+    },
+    "findByTransactionCreatedDateBetweenOrderByTransactionCreatedDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/inventoryTransaction/search/findByTransactionCreatedDateBetweenOrderByTransactionCreatedDateAsc{?start,end}",
+      "templated" : true
+    },
+    "findByQuantityBetweenOrderByQuantityAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/inventoryTransaction/search/findByQuantityBetweenOrderByQuantityAsc{?minQty,maxQty}",
+      "templated" : true
+    },
+    "findByInventoryTransactionTypeId" : {
+      "href" : "http://localhost:8080/northwind-data/api/inventoryTransaction/search/findByInventoryTransactionTypeId{?transactionTypeId}",
+      "templated" : true
+    },
+    "findByPurchaseOrderId" : {
+      "href" : "http://localhost:8080/northwind-data/api/inventoryTransaction/search/findByPurchaseOrderId{?purchaseOrderId}",
+      "templated" : true
+    },
+    "findByTransactionModifiedDateBetweenOrderByTransactionModifiedDateAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/inventoryTransaction/search/findByTransactionModifiedDateBetweenOrderByTransactionModifiedDateAsc{?start,end}",
+      "templated" : true
+    },
+    "findByCommentsContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/inventoryTransaction/search/findByCommentsContaining{?comments}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "http://localhost:8080/northwind-data/api/inventoryTransaction/search"
+    }
+  }
+}

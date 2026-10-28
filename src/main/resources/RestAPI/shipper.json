@@ -1,0 +1,31 @@
+{
+  "_links" : {
+    "findAllByLastName" : {
+      "href" : "http://localhost:8080/northwind-data/api/shipper/search/findAllByLastName{?lastName}",
+      "templated" : true
+    },
+    "findByFirstNameContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/shipper/search/findByFirstNameContaining{?firstName}",
+      "templated" : true
+    },
+    "findByJobTitleContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/shipper/search/findByJobTitleContaining{?jobTitle}",
+      "templated" : true
+    },
+    "findByLastNameContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/shipper/search/findByLastNameContaining{?lastName}",
+      "templated" : true
+    },
+    "findByEmailAddress" : {
+      "href" : "http://localhost:8080/northwind-data/api/shipper/search/findByEmailAddress{?emailAddress}",
+      "templated" : true
+    },
+    "findByJobTitle" : {
+      "href" : "http://localhost:8080/northwind-data/api/shipper/search/findByJobTitle{?jobTitle}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "http://localhost:8080/northwind-data/api/shipper/search"
+    }
+  }
+}

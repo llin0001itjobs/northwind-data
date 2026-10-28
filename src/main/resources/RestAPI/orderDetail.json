@@ -1,0 +1,43 @@
+{
+  "_links" : {
+    "findByProductId" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByProductId{?productId}",
+      "templated" : true
+    },
+    "findByCustomerOrderId" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByCustomerOrderId{?customerOrderId}",
+      "templated" : true
+    },
+    "findByQuantityBetweenOrderByQuantityAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByQuantityBetweenOrderByQuantityAsc{?min,max}",
+      "templated" : true
+    },
+    "findByUnitPriceBetweenOrderByUnitPriceAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByUnitPriceBetweenOrderByUnitPriceAsc{?min,max}",
+      "templated" : true
+    },
+    "findByDateAllocatedBetweenOrderByDateAllocatedAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByDateAllocatedBetweenOrderByDateAllocatedAsc{?start,end}",
+      "templated" : true
+    },
+    "findByOrderStatusId" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByOrderStatusId{?statusId}",
+      "templated" : true
+    },
+    "findByPurchaseOrderId" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByPurchaseOrderId{?purchaseOrderId}",
+      "templated" : true
+    },
+    "findByDiscountBetweenOrderByDiscountAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByDiscountBetweenOrderByDiscountAsc{?min,max}",
+      "templated" : true
+    },
+    "findByInventoryTransactionId" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search/findByInventoryTransactionId{?inventoryTransactionId}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "http://localhost:8080/northwind-data/api/orderDetail/search"
+    }
+  }
+}

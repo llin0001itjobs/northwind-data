@@ -43,6 +43,11 @@ public class CustomerOrderResourceProcessor implements RepresentationModelProces
 				model.add(Link.of(apiURLContext +  "/customerOrder/" + customerOrder.getId()
 						+ "/orderTaxStatus?id=" + orderTaxStatusId, "orderTaxStatus"));
 			}
+			if (customerOrder.getPaymentType() != null) {
+				Long paymentTypeId = (long) customerOrder.getPaymentType().getId();
+				model.add(Link.of(apiURLContext +  "/customerOrder/" + customerOrder.getId()
+						+ "/paymentType?id=" + paymentTypeId, "paymentType"));
+			}
 		}
 		return model;
 	}

@@ -65,9 +65,11 @@ public class CustomerOrder implements _Entity {
 
 	private double taxes;
 
-	@Value(value = "payment_type")	
-	private String paymentType;
-
+	@Nullable
+	@OneToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
+	@JoinColumn(name = "payment_type_id")
+	private PaymentType paymentType;
+	
 	@Value(value = "paid_date")
 	private LocalDateTime paidDate;
 
@@ -217,11 +219,11 @@ public class CustomerOrder implements _Entity {
 		this.taxes = taxes;
 	}
 
-	public String getPaymentType() {
+	public PaymentType getPaymentType() {
 		return paymentType;
 	}
 
-	public void setPaymentType(String paymentType) {
+	public void setPaymentType(PaymentType paymentType) {
 		this.paymentType = paymentType;
 	}
 

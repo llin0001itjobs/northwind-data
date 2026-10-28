@@ -1,0 +1,60 @@
+{
+  "_links" : {
+    "categoryRatios" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/categoryRatios"
+    },
+    "findByMinimumReorderQuantityBetweenOrderByMinimumReorderQuantityAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/findByMinimumReorderQuantityBetweenOrderByMinimumReorderQuantityAsc{?min,max}",
+      "templated" : true
+    },
+    "findByProductNameContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/findByProductNameContaining{?productName}",
+      "templated" : true
+    },
+    "findByStandardCostBetweenOrderByStandardCostAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/findByStandardCostBetweenOrderByStandardCostAsc{?min,max}",
+      "templated" : true
+    },
+    "findByCategoryAndDiscontinued" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/findByCategoryAndDiscontinued{?category,discontinued}",
+      "templated" : true
+    },
+    "findByDiscontinued" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/findByDiscontinued{?discontinued}",
+      "templated" : true
+    },
+    "findByListPriceBetweenOrderByListPriceAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/findByListPriceBetweenOrderByListPriceAsc{?min,max}",
+      "templated" : true
+    },
+    "findByCategoryContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/findByCategoryContaining{?category}",
+      "templated" : true
+    },
+    "findByProductCode" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/findByProductCode{?productCode}",
+      "templated" : true
+    },
+    "priceRangePerStandardCost" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/priceRangePerStandardCost"
+    },
+    "findByReorderLevelBetweenOrderByReorderLevelAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/findByReorderLevelBetweenOrderByReorderLevelAsc{?min,max}",
+      "templated" : true
+    },
+    "priceRangePerListPrice" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/priceRangePerListPrice"
+    },
+    "findByTargetLevelBetweenOrderByTargetLevelAsc" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/findByTargetLevelBetweenOrderByTargetLevelAsc{?min,max}",
+      "templated" : true
+    },
+    "findByDescriptionContaining" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search/findByDescriptionContaining{?description}",
+      "templated" : true
+    },
+    "self" : {
+      "href" : "http://localhost:8080/northwind-data/api/product/search"
+    }
+  }
+}

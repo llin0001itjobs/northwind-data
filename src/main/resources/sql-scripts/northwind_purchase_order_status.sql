@@ -35,7 +35,7 @@ CREATE TABLE `purchase_order_status` (
 
 LOCK TABLES `purchase_order_status` WRITE;
 /*!40000 ALTER TABLE `purchase_order_status` DISABLE KEYS */;
-INSERT INTO `purchase_order_status` VALUES (0,'New'),(1,'Submitted'),(2,'Approved'),(3,'Closed');
+INSERT INTO `purchase_order_status` VALUES (1,'New'),(2,'Submitted'),(3,'Approved'),(4,'Closed');
 /*!40000 ALTER TABLE `purchase_order_status` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

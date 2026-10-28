@@ -35,7 +35,7 @@ CREATE TABLE `order_status` (
 
 LOCK TABLES `order_status` WRITE;
 /*!40000 ALTER TABLE `order_status` DISABLE KEYS */;
-INSERT INTO `order_status` VALUES (0,'New'),(1,'Invoiced'),(2,'Shipped'),(3,'Closed');
+INSERT INTO `order_status` VALUES (1,'New'),(2,'Invoiced'),(3,'Shipped'),(4,'Closed');
 /*!40000 ALTER TABLE `order_status` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

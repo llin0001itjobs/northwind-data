@@ -35,7 +35,7 @@ CREATE TABLE `order_tax_status` (
 
 LOCK TABLES `order_tax_status` WRITE;
 /*!40000 ALTER TABLE `order_tax_status` DISABLE KEYS */;
-INSERT INTO `order_tax_status` VALUES (0,'Tax Exempt'),(1,'Taxable');
+INSERT INTO `order_tax_status` VALUES (1,'Tax Exempt'),(0,'Taxable');
 /*!40000 ALTER TABLE `order_tax_status` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

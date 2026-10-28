@@ -3,6 +3,7 @@ package org.llin.demo.northwind.data.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -26,16 +27,23 @@ public class User {
 
 	@NotBlank
 	@Size(min = 3, max = 32)
+	@Column(name = "username", unique = true, nullable = false, length = 32)
 	private String username;
 
 	@NotBlank
 	@Email
+	 // Enforce uniqueness at the JPA entity configuration level
+    @Column(name = "email", unique = true, nullable = false, length = 256)	
 	private String email;
 
 	private String password;
 
 	private boolean enabled = false;
+	
+	@Column(name="email_verified")
 	private boolean emailVerified = false;
+	
+	@Column(name = "verification_token", unique = true, length = 36)
 	private String verificationToken;
 
 	@Transient
