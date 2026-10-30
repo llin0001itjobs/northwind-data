@@ -31,12 +31,14 @@ public class SecurityConfig  {
 	        // 1. Disable CSRF so the port 8082 backend client can perform POST requests
 	        .csrf(csrf -> csrf.disable())
 	        
-	        // 2. Keep your channel and authorization rules intact
-	        .requiresChannel(channel -> channel.anyRequest())
+	        // 2. Keep authorization rules intact (Incomplete requiresChannel removed)
 	        .authorizeHttpRequests(authorize -> authorize
 	            .anyRequest().permitAll()
 	        )
 	        .build();
 	}
 
+
 }
+
+
